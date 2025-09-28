@@ -25,10 +25,7 @@ jobs:
           python-version-file: "pyproject.toml"
 
       - name: Sync project (create venv + dev deps)
-        run: uv sync
+        run: uv sync --dev
 
       - name: Run tests
-        # env:
-        #   PYTHONPATH: src # srcレイアウトをimport可に
-        # run: uv run pytest -q
-        run: uv run pytest -q
+        run: uv run pytest
